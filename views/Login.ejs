@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validateEmail() {
+            var email = document.getElementById(mail).value;
+            if(email === "admin@123"){
+                return true;
+            }
+            else{
+            return false;
+            }
+        }
+        function password() {
+            var pass = document.getElementById(pass).value;
+            if(pass === "admin"){
+                return true;
+            }
+            else{
+            return false;
+            }
+        }
+          
+        function validateUser() {
+            var f1 = validateEmail();
+            var f2 = password();
+            return f1 && f2;
+        }
+    </script>
+</head>
+<body>
+    <form action="login" method="post" onsubmit="return validateUser()">
+    UserName : <input type="email" name="mail" id="mail" placeholder="Email" required><br>
+    Password : <input type="password" name="pass" id="pass" placeholder="Password" required><br>
+    <input type="submit" value="login" name="login">
+</form>
+</body>
+</html>
